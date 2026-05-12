@@ -1,0 +1,62 @@
+@import "tailwindcss";
+
+:root {
+  --background: #fbf9fa;
+  --on-background: #1b1b1d;
+  --surface: #fbf9fa;
+  --surface-dim: #dbd9db;
+  --surface-container-lowest: #ffffff;
+  --surface-container-low: #f5f3f4;
+  --surface-container: #f0edee;
+  --surface-container-high: #eae7e9;
+  --surface-container-highest: #e4e2e3;
+  --on-surface: #1b1b1d;
+  --on-surface-variant: #44474c;
+  --primary: #000000;
+  --on-primary: #ffffff;
+  --secondary: #545e76;
+  --on-secondary: #ffffff;
+  --outline: #74777d;
+  --outline-variant: #c4c6cc;
+  --error: #ba1a1a;
+  --on-error: #ffffff;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--on-background);
+  --color-surface: var(--surface);
+  --color-surface-dim: var(--surface-dim);
+  --color-surface-lowest: var(--surface-container-lowest);
+  --color-surface-low: var(--surface-container-low);
+  --color-surface-container: var(--surface-container);
+  --color-surface-high: var(--surface-container-high);
+  --color-surface-highest: var(--surface-container-highest);
+  --color-on-surface: var(--on-surface);
+  --color-on-surface-variant: var(--on-surface-variant);
+  --color-primary: var(--primary);
+  --color-on-primary: var(--on-primary);
+  --color-secondary: var(--secondary);
+  --color-on-secondary: var(--on-secondary);
+  --color-outline: var(--outline);
+  --color-outline-variant: var(--outline-variant);
+  
+  --font-sans: 'Inter', var(--font-geist-sans), sans-serif;
+  --font-mono: 'JetBrains Mono', var(--font-geist-mono), monospace;
+}
+
+/* Base styles */
+body {
+  background-color: var(--background);
+  color: var(--on-background);
+  font-family: var(--font-sans);
+  margin: 0;
+  padding: 0;
+}
+
+/* Glassmorphism utility classes */
+@layer utilities {
+  .glass-panel {
+    @apply bg-surface-lowest/80 backdrop-blur-[12px] border border-outline-variant/30 shadow-[0_8px_32px_rgba(0,0,0,0.08)];
+  }
+}
